@@ -12,6 +12,10 @@
 
     <title>For Ukraine</title>
     <style>
+        :root {
+            --app-height: 100%;
+        }
+
         body {
             background-color: #a4dceb;
             color: #444;
@@ -33,7 +37,7 @@
             /* font-family: 'Kingthings Xstitch', sans-serif; */
             font-family: 'Leckerli One', cursive;
             /* font-family: 'Pacifico', cursive; */
-            font-size: 2em;
+            font-size: 3em;
             font-weight: normal;
             /* background-color: red; */
         }
@@ -96,6 +100,16 @@
             <img src="images/courage.png" width="340" alt="courage" id="courage">
         </main>
     </div>
+
+    <script>
+        // This is a fix for height on iOS
+        const appHeight = () => {
+            const doc = document.documentElement;
+            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+        }
+        window.addEventListener('resize', appHeight);
+        appHeight();
+    </script>
 </body>
 
 </html>
