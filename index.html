@@ -5,25 +5,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peace for Ukraine</title>
+    <link href="https://fonts.cdnfonts.com/css/kingthings-xstitch" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Pacifico&display=swap" rel="stylesheet">
+
+    <title>For Ukraine</title>
     <style>
         body {
             background-color: #a4dceb;
+            color: #444;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* display: grid;
+            place-items: center; */
+            /* width:100vw; */
+            height: 100vh;
+        }
+
+        h1 {
+            /* font-family: 'Kingthings Xstitch', sans-serif; */
+            font-family: 'Leckerli One', cursive;
+            /* font-family: 'Pacifico', cursive; */
+            font-size: 4.5em;
+            font-weight: normal;
+            /* background-color: red; */
         }
 
         main {
             display: grid;
             place-items: center;
-            /* width:100vw; */
-            height: 100vh;
+            position: relative;
+            /* background-color: purple; */
+        }
+
+        #star {
+            transform: scale(0) rotate(0deg);
+            animation: scaleSpin 1s ease forwards;
+        }
+
+        #courage {
+            position: absolute;
+            top: 55%;
+            transform: translateY(-50%) scale(0);
+
+            animation: scaleSize .5s ease forwards;
+            animation-delay: .5s;
+        }
+
+        @keyframes scaleSpin {
+            from {
+                transform: scale(0) rotate(0deg);
+            }
+
+            to {
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        @keyframes scaleSize {
+            0% {
+                transform: translateY(-50%) scale(0);
+            }
+
+            98% {
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            100% {
+                transform: translateY(-50%) scale(1);
+            }
+        }
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <h1>HOPE coming later today!</h1>
-    </main>
+    <div id="container">
+        <header>
+            <h1>Wishing you...</h1>
+        </header>
+        <main>
+            <img src="images/star.png" width="598" height="602" alt="star" id="star">
+            <img src="images/courage.png" width="682" height="172" alt="courage" id="courage">
+        </main>
+    </div>
 </body>
 
 </html>
