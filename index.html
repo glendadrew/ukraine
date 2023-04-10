@@ -9,106 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Pacifico&display=swap" rel="stylesheet">
-
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>For Ukraine</title>
-    <style>
-        /* :root {
-            --app-height: 100%;
-        } */
-
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            /* height: 100vh; */
-            /* fallback for Js load */
-            /* height: var(--app-height); */
-            background-color: #a4dceb;
-            color: #444;
-        }
-
-        #container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
-            /* display: grid;
-            place-items: center; */
-            /* width:100vw; */
-            /* height: 100vh; */
-            /* height: var(--app-height); */
-        }
-
-        h1 {
-            margin: 0;
-            padding: 0;
-            /* font-family: 'Kingthings Xstitch', sans-serif; */
-            font-family: 'Leckerli One', cursive;
-            /* font-family: 'Pacifico', cursive; */
-            font-size: 3em;
-            font-weight: normal;
-            text-shadow: 2px 2px 4px gray;
-            /* background-color: red; */
-        }
-
-        main {
-            display: grid;
-            place-items: center;
-            position: relative;
-            /* top: -3%; */
-            /* background-color: purple; */
-        }
-
-        #image {
-            transform: scale(0) rotate(0deg);
-            animation: scaleSpin 1s ease forwards;
-        }
-
-        #banner {
-            position: absolute;
-            top: 55%;
-            transform: translateY(-50%) scale(0);
-
-            animation: scaleSize .5s ease forwards;
-            animation-delay: .5s;
-        }
-
-        @keyframes scaleSpin {
-            from {
-                transform: scale(0) rotate(0deg);
-            }
-
-            to {
-                transform: scale(1) rotate(180deg);
-            }
-        }
-
-        @keyframes scaleSize {
-            0% {
-                transform: translateY(-50%) scale(0);
-            }
-
-            97% {
-                transform: translateY(-50%) scale(1.1);
-            }
-
-            100% {
-                transform: translateY(-50%) scale(1);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -117,40 +20,15 @@
             <h1>Wishing you...</h1>
         </header>
         <main>
-            <!-- <img src="images/star3.png" width="400" height="400" alt="star" id="image">
-            <img src="images/courage3.png" width="400" height="105" alt="courage" id="banner"> -->
-            <img src="images/flower.png" width="400" height="400" alt="star" id="image">
-            <img src="images/beauty.png" width="400" height="105" alt="courage" id="banner">
+            <img src="images/star3.png" width="400" height="400" alt="star" id="image">
+            <img src="images/courage3.png" width="400" height="105" alt="courage" id="banner">
+            <!-- <img src="images/flower.png" width="400" height="400" alt="star" id="image">
+            <img src="images/beauty.png" width="400" height="105" alt="courage" id="banner"> -->
 
             <p>more graphics coming soon...</p>
         </main>
 
     </div>
-
-    <script>
-        (function () {
-            'use strict';
-            const images = ['images/star3.png', 'images/flower.png'];
-            const banners = ['images/courage3.png', 'images/beauty.png'];
-            let counter = 0;
-
-            const myInterval = setInterval(changeImage, 3000);
-            function changeImage() {
-                // console.log('changeImage called')
-                counter < images.length - 1 ? counter++ : counter = 0;
-
-                document.querySelector('#image').src = images[counter];
-                document.querySelector('#banner').src = banners[counter];
-            }
-            // This is a fix for height on iOS
-            // const appHeight = () => {
-            //     const doc = document.documentElement;
-            //     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-            // }
-            // window.addEventListener('resize', appHeight);
-            // appHeight();
-        })()
-    </script>
 </body>
 
 </html>

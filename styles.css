@@ -1,0 +1,151 @@
+        /* :root {
+            --app-height: 100%;
+        } */
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            /* height: 100vh; */
+            /* fallback for Js load */
+            /* height: var(--app-height); */
+            background-color: #a4dceb;
+            color: #444;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
+            /* height: var(--app-height); */
+        }
+        header{
+            opacity:0;
+            transition: opacity .5s;
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-family: 'Leckerli One', cursive;
+            font-size: 3em;
+            font-weight: normal;
+            text-shadow: 2px 2px 4px gray;
+        }
+
+        main {
+            display: grid;
+            place-items: center;
+            position: relative;
+            /* top: -3%; */
+        }
+
+        #image {
+            animation-name: spinIn;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            animation-delay: .5s;
+            transition: opacity 1s;
+        }
+
+        #banner {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) scale(0);
+            animation-name: scaleUp;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+            transition: opacity 1s;
+        }
+
+        .fadeIn{
+            opacity:1;
+        }
+        .fadeOut{
+            opacity:0;
+        }
+
+        .scaleUpClass{
+            animation: scaleUp 1s ease;
+            /* animation-delay: 1s; */
+        }
+
+        .scaleDownClass{
+            animation: scaleDown .5s ease;
+            /* animation-delay: 1s; */
+        }
+
+        .spinInClass{
+            transform: scale(0) rotate(0deg);
+            animation: spinIn 1s ease forwards;
+        }
+
+        @keyframes spinIn {
+            from {
+                transform: scale(0) rotate(0deg);
+            }
+
+            to {
+                transform: scale(1) rotate(180deg);
+            }
+        }
+        @keyframes spinOut {
+            from {
+                transform: scale(1) rotate(180deg);
+            }
+
+            to {
+                transform: scale(0) rotate(0deg);
+            }
+        }
+
+
+        @keyframes scaleUp {
+            0% {
+                transform: translateY(-50%) scale(0);
+            }
+
+            97% {
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            100% {
+                transform: translateY(-50%) scale(1);
+            }
+        }
+
+        @keyframes scaleDown {
+            0% {
+                transform: translateY(-50%) scale(1);
+            }
+
+            3% {
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            100% {
+                transform: translateY(-50%) scale(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
