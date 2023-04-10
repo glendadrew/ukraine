@@ -20,8 +20,6 @@
         body {
             padding: 0;
             margin: 0;
-            height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
-
             /* height: 100vh; */
             /* fallback for Js load */
             /* height: var(--app-height); */
@@ -35,6 +33,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
             /* display: grid;
             place-items: center; */
             /* width:100vw; */
@@ -99,6 +98,15 @@
                 transform: translateY(-50%) scale(1);
             }
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -120,13 +128,28 @@
     </div>
 
     <script>
-        // This is a fix for height on iOS
-        // const appHeight = () => {
-        //     const doc = document.documentElement;
-        //     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-        // }
-        // window.addEventListener('resize', appHeight);
-        // appHeight();
+        (function () {
+            'use strict';
+            const images = ['images/star3.png', 'images/flower.png'];
+            const banners = ['images/courage3.png', 'images/beauty.png'];
+            let counter = 0;
+
+            const myInterval = setInterval(changeImage, 3000);
+            function changeImage() {
+                // console.log('changeImage called')
+                counter < images.length - 1 ? counter++ : counter = 0;
+
+                document.querySelector('#image').src = images[counter];
+                document.querySelector('#banner').src = banners[counter];
+            }
+            // This is a fix for height on iOS
+            // const appHeight = () => {
+            //     const doc = document.documentElement;
+            //     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+            // }
+            // window.addEventListener('resize', appHeight);
+            // appHeight();
+        })()
     </script>
 </body>
 
