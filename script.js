@@ -7,7 +7,7 @@
     const banner = document.querySelector('#banner')
     let counter = 0;
 
-    setInterval(changeImage, 4000);
+    setInterval(changeImage, 5000);
 
     header.className = 'fadeIn';
 
