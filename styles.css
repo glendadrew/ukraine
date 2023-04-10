@@ -34,7 +34,8 @@
             font-size: 3em;
             font-weight: normal;
             text-shadow: 2px 2px 4px gray;
-            opacity:.7;
+            /* opacity:.5; */
+            mix-blend-mode: overlay;
         }
 
         main {
