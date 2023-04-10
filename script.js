@@ -28,9 +28,11 @@
                 image.style.animation = 'spinIn 1s forwards';
                 
                 setTimeout(function(){
-                    banner.style.animation = 'scaleUp .5s forwards';
-                }, 500);
+                    banner.style.animation = 'scaleUp .2s forwards';
+                }, 250);
+
             }, 250);
+            
         },1000)
     }
 
