@@ -20,9 +20,11 @@
         body {
             padding: 0;
             margin: 0;
-            height: 100vh;
+            height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
+
+            /* height: 100vh; */
             /* fallback for Js load */
-            height: var(--app-height);
+            /* height: var(--app-height); */
             background-color: #a4dceb;
             color: #444;
         }
@@ -56,16 +58,16 @@
             display: grid;
             place-items: center;
             position: relative;
-            top: -3%;
+            /* top: -3%; */
             /* background-color: purple; */
         }
 
-        #star {
+        #image {
             transform: scale(0) rotate(0deg);
             animation: scaleSpin 1s ease forwards;
         }
 
-        #courage {
+        #banner {
             position: absolute;
             top: 55%;
             transform: translateY(-50%) scale(0);
@@ -107,20 +109,22 @@
             <h1>Wishing you...</h1>
         </header>
         <main>
-            <img src="images/star3.png" width="400" height="400" alt="star" id="star">
-            <img src="images/courage3.png" width="400" height="105" alt="courage" id="courage">
+            <!-- <img src="images/star3.png" width="400" height="400" alt="star" id="image">
+            <img src="images/courage3.png" width="400" height="105" alt="courage" id="banner"> -->
+            <img src="images/flower.png" width="400" height="400" alt="star" id="image">
+            <img src="images/beauty.png" width="400" height="105" alt="courage" id="banner">
         </main>
         <p>more graphics coming soon...</p>
     </div>
 
     <script>
         // This is a fix for height on iOS
-        const appHeight = () => {
-            const doc = document.documentElement;
-            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-        }
-        window.addEventListener('resize', appHeight);
-        appHeight();
+        // const appHeight = () => {
+        //     const doc = document.documentElement;
+        //     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+        // }
+        // window.addEventListener('resize', appHeight);
+        // appHeight();
     </script>
 </body>
 
