@@ -11,7 +11,7 @@
             /* height: var(--app-height); */
             background-color: #a4dceb;
             background-image: url('images/fabficbkgd.png');
-            color: #333;
+            color: black;
         }
 
         #container {
@@ -34,6 +34,7 @@
             font-size: 3em;
             font-weight: normal;
             text-shadow: 2px 2px 4px gray;
+            opacity:.7;
         }
 
         main {
