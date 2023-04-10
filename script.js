@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    const images = ['images/star3.png', 'images/flower.png'];
-    const banners = ['images/courage3.png', 'images/beauty.png'];
+    const images = ['images/star3.png', 'images/flower.png', 'images/war.png'];
+    const banners = ['images/courage3.png', 'images/beauty.png', 'images/spacer.png'];
     const header = document.querySelector('header');
     const image = document.querySelector('#image');
     const banner = document.querySelector('#banner')
@@ -41,5 +41,5 @@
     // }
     // window.addEventListener('resize', appHeight);
     // appHeight();
-    
+
 })()
