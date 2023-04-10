@@ -13,7 +13,7 @@
 
     function changeImage() {
         console.log('changeImage called')
-        header.className = 'fadeOut';
+        // header.className = 'fadeOut';
         image.style.animation = 'spinOut 1s forwards';
         banner.style.animation = 'scaleDown 1s forwards';
         
@@ -22,13 +22,13 @@
             counter < images.length - 1 ? counter++ : counter = 0;
             image.src = images[counter];
             banner.src = banners[counter];
-            header.className = 'fadeIn';
+            // header.className = 'fadeIn';
 
             setTimeout(function(){
                 image.style.animation = 'spinIn 1s forwards';
                 
                 setTimeout(function(){
-                    banner.style.animation = 'scaleUp .2s forwards';
+                    banner.style.animation = 'scaleUp .25s forwards';
                 }, 250);
 
             }, 250);

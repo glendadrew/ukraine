@@ -10,7 +10,8 @@
             /* fallback for Js load */
             /* height: var(--app-height); */
             background-color: #a4dceb;
-            color: #444;
+            background-image: url('images/fabficbkgd.png');
+            color: #333;
         }
 
         #container {
@@ -47,8 +48,8 @@
             animation-duration: 1s;
             animation-timing-function: ease;
             animation-fill-mode: forwards;
-            animation-delay: .5s;
-            transition: opacity 1s;
+            /* animation-delay: .5s; */
+            /* transition: opacity 1s; */
         }
 
         #banner {
@@ -56,10 +57,10 @@
             top: 50%;
             transform: translateY(-50%) scale(0);
             animation-name: scaleUp;
-            animation-duration: 1s;
+            animation-duration: .25s;
             animation-timing-function: ease;
             animation-fill-mode: forwards;
-            animation-delay: 1s;
+            animation-delay: .75s;
             transition: opacity 1s;
         }
 
