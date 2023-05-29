@@ -16,6 +16,7 @@
     const bannerScales = [.3, .7, 1, .7, .3, 0];
     let imageDegrees = 0;
     let counter = 0;
+    let imageCounter = 0;
 
     moveHeaderIn();
 
@@ -85,9 +86,10 @@
     }
 
     function changeImage() {
-        counter < images.length - 1 ? counter++ : counter = 0;
-        image.src = images[counter];
-        banner.src = banners[counter];
+        console.log ("changeImage")
+        imageCounter < images.length - 1 ? imageCounter++ : imageCounter = 0;
+        image.src = images[imageCounter];
+        banner.src = banners[imageCounter];
         moveHeaderIn();
     }
 })();
