@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-    const images = ['images/star3.png', 'images/flower.png'];
-    const banners = ['images/courage3.png', 'images/beauty.png'];
+    const images = ['images/no-more-war.png', 'images/star3.png', 'images/flower.png'];
+    const banners = ['images/spacer.png', 'images/courage3.png', 'images/beauty.png'];
     const h1 = document.querySelector('h1');
     const image = document.querySelector('#image');
     const banner = document.querySelector('#banner');
@@ -14,7 +14,7 @@
     const imageInLeft = [49, 39, 29, 19, 0];
     const imageOutLeft = [10, 20, 30, 45, 50, 60];
     const bannerScales = [.3, .7, 1, .7, .3, 0];
-    let imageDegrees = 0;
+    let imageDegrees = 36;
     let counter = 0;
     let imageCounter = 0;
 
@@ -32,15 +32,16 @@
     }
 
     function moveImageIn(){
+        console.log(`image degrees: ${imageDegrees}`)
         image.style.transform = `scale(${imageInScales[counter]}) rotate(${imageDegrees}deg)`;
         image.style.left = `${imageInLeft[counter]}vw`;
         if (counter < imageInScales.length){
             counter++;
-            imageDegrees += 30;
+            imageDegrees += 36;
             setTimeout(moveImageIn, lessTime);
         } else {
             counter = 0;
-            imageDegrees += 30;
+            imageDegrees += 36;
             setTimeout(moveBanner, lessTime);
         }
     }
@@ -65,11 +66,11 @@
         image.style.left = `-${imageOutLeft[counter]}vw`;
         if (counter < imageOutScales.length){
             counter++;
-            imageDegrees += 30;
+            imageDegrees += 36;
             setTimeout(moveImageOut, lessTime);
         } else {
             counter = 0;
-            imageDegrees += 30;
+            imageDegrees = 36;
             setTimeout(moveHeaderOut, lessTime);
         }
     }
@@ -93,7 +94,6 @@
         moveHeaderIn();
     }
 })();
-
     // This is a fix for height on iOS
     // const appHeight = () => {
     //     const doc = document.documentElement;
